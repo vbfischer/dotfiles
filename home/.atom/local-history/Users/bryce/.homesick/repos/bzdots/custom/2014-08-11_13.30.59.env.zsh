@@ -27,6 +27,3 @@ export PR2_MOUNT="/Users/bryce/Mounts/beaconMounts/pr2"
 
 export BEACON_TRUNK="/Users/bryce/Code/BEACON"
 export BEACON_BRANCH="/Users/bryce/Code/BEACON_branch"
-
-export SVN_ROOT=http://amherst/subversion/POC
-export BEACON_REP_ROOT=$SVN_ROOT/Applications/BEACON/ 
