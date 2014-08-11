@@ -1,0 +1,11 @@
+{
+  "name": "base16-light-syntax",
+  "theme": "syntax",
+  "version": "0.2.0",
+  "description": "Base16 Light syntax theme for Atom.",
+  "repository": "https://github.com/rockymadden/base16-light-syntax-theme",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.59.0"
+  }
+}

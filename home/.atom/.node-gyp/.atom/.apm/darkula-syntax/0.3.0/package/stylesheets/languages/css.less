@@ -1,0 +1,42 @@
+@css-class-color: @chardonnay;
+@css-property-name-color: @amethyst-smoke;
+@css-property-value-color: @gray;
+@css-constant-numeric-color: @glacier;
+@css-elements-color: @raw-sienna;
+@css-elements-weight: normal;
+@css-unit-color: @heather;
+
+.editor {
+
+  .css {
+
+    &.class {
+      color: @css-class-color;
+    }
+
+    .property-name {
+      color: @css-property-name-color;
+    }
+
+    .property-value {
+      color: @css-property-value-color;
+    }
+
+    .constant {
+      &.numeric {
+        color: @css-constant-numeric-color;
+      }
+    }
+
+    .elements {
+      color: @css-elements-color;
+      font-weight: @css-elements-weight;
+    }
+
+    .unit {
+      color: @css-unit-color;
+    }
+
+  }
+
+}

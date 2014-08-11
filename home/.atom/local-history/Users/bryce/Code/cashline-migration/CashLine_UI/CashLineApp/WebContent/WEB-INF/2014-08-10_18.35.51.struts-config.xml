@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+
+	<!-- Data Sources -->
+	<data-sources></data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+
+		<form-bean name="eConnectRequestForm" type="com.fis.cashlineapp.forms.SCIClientRequestForm" />
+
+		<form-bean name="welcomeForm" type="com.fis.cashlineapp.forms.WelcomeForm" />
+
+		<form-bean name="loginForm" type="com.fis.cashlineapp.forms.LoginForm" />
+
+		<form-bean name="CashLineForm" type="com.fis.cashlineapp.forms.CashLineForm" />
+
+		<form-bean name="changePasswordForm" type="com.fis.cashlineapp.forms.ChangePasswordForm" />
+
+        <form-bean name="enrollForm" type="com.fis.cashlineapp.forms.EnrollForm" />
+
+        <form-bean name="manageAccountsForm" type="com.fis.cashlineapp.forms.ManageAccountsForm" />
+
+	</form-beans>
+
+	<!-- Global Exceptions -->
+	<global-exceptions></global-exceptions>
+
+
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="logout" path="/logoutPerform.do" />
+		<forward name="login" path="/loginPage.do" />
+		<forward name="welcome" path="/welcomePage.do" />
+		<forward name="error" path="/error.jsp" />
+        <forward name="home" path="/index.jsp" />
+	</global-forwards>
+
+	<!-- Action Mappings -->
+
+	<action-mappings>
+
+		<!--		Start Login module		-->
+		<action path="/loginPage" type="org.apache.struts.actions.ForwardAction" parameter="login/login-form.jsp" />
+		<action path="/welcomePage" type="com.fis.cashlineapp.actions.WelcomeAction" name="welcomeForm">
+			<forward name="success" path="/archived/welcome/welcome-body.jsp" />
+			<forward name="fail" path="/archived/common/error-form.jsp" />
+		</action>
+		<action path="/logoutPerform" type="com.fis.cashlineapp.actions.LogoutAction" validate="true" name="loginForm">
+			<forward name="success" path="/archived/login/login-form.jsp" />
+		</action>
+		<action path="/loginPerform" type="com.fis.cashlineapp.actions.LoginAction" name="loginForm" validate="true" parameter="method" scope="request" >
+			<forward name="success" path="/welcome.jsp" />
+			<forward name="forcePasswordChange" path="/loginPwordChange.do" />
+			<forward name="fail" path="/archived/common/error-form.jsp" />
+		</action>
+		<action path="/loginPwordChange" type="com.fis.cashlineapp.actions.LoginAction" name="changePasswordForm" parameter="method" scope="request" input="/archived/login/login-pword-change.jsp" validate="true">
+			<forward name="success" path="/archived/login/login-pword-change.jsp" />
+		</action>
+	    <action path="/changePasswordLoginPerform" type="com.fis.cashlineapp.actions.LoginAction" name="changePasswordForm" validate="true" parameter="method" scope="request" input="/archived/login/login-pword-change.jsp">
+			<forward name="success" path="/archived/login/login-form.jsp" />
+			<forward name="fail" path="/archived/login/login-pword-change.jsp" />
+		</action>
+        <action path="/enrollAgreement" type="com.fis.cashlineapp.actions.EnrollAction" name="enrollForm" scope="request" parameter="method" input="/enrollAgreement.jsp" validate="false">
+            <forward name="success" path="/enrollForm.jsp" />
+            <forward name="fail" path="/enrollForm.jsp" />
+        </action>
+        <action path="/enrollDisplay" type="com.fis.cashlineapp.actions.EnrollAction" name="enrollForm" scope="request" parameter="method" input="/enrollAgreement.jsp" validate="false">
+            <forward name="success" path="/enrollAgreement.jsp" />
+			<forward name="fail" path="/enrollForm.jsp" />
+		</action>
+		<action path="/enrollPerform" type="com.fis.cashlineapp.actions.EnrollAction" name="enrollForm" scope="request" parameter="method" validate="true" input="/enrollForm.jsp">
+			<forward name="success" path="/enrollDetails.jsp" />
+			<forward name="enroll" path="/enrollForm.jsp" />
+			<forward name="fail" path="/enrollForm.jsp" />
+		</action>
+
+		<action path="/enrollEdit" type="com.fis.cashlineapp.actions.EnrollAction" name="enrollForm" scope="request" parameter="method" validate="false" input="/archived/enroll/enroll-form.jsp">
+			<forward name="enroll" path="/enrollForm.jsp" />
+			<forward name="fail" path="/enrollForm.jsp" />
+		</action>
+
+		<action path="/enrollSave" type="com.fis.cashlineapp.actions.EnrollAction" name="enrollForm" scope="request" parameter="method" validate="true" input="/enrollForm.jsp">
+			<forward name="success" path="/enrollSuccess.jsp" />
+			<forward name="enroll" path="/enrollForm.jsp" />
+		</action>
+
+		<action path="/displayLogo" type="com.fis.cashlineapp.actions.DisplayImageAction">
+			<forward name="success" path="/archived/enroll/enroll-form.jsp" />
+			<forward name="fail" path="/archived/common/failure-form.jsp" />
+		</action>
+
+
+		<action path="/logout" type="com.fis.cashlineapp.actions.LogoutAction">
+            <forward name="success" path="index.jsp" />
+		</action>
+
+		<!--		End Login Module		-->
+
+		<action path="/errorDisplay" type="com.fis.cashlineapp.actions.ErrorAction">
+			<forward name="success" path="/archived/common/error-form.jsp" />
+		</action>
+
+        <!--        ACH Account Management -->
+        <action path="/manageAccounts" type="com.fis.cashlineapp.actions.ManageAccountsAction" name="manageAccountsForm" parameter="method" scope="session" validate="true" >
+            <forward name="success" path="/manage-ach-accounts.jsp" />
+            <forward name="fail" path="/manage-ach-accounts.jsp" />
+        </action>
+
+	</action-mappings>
+
+	<!-- Message Resources -->
+	<message-resources parameter="com.fis.cashlineapp.resources.ApplicationResources" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames" value="/WEB-INF/validator/validator-rules.xml,/WEB-INF/validator/validation.xml,/WEB-INF/validator/validation-validwhen.xml" />
+<!--
+        <set-property property="pathnames" value="/org/apache/struts/validator/validator-rules-compressed.xml,/WEB-INF/validator/validation.xml,/WEB-INF/validator/validation-validwhen.xml" />
+-->
+    </plug-in>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-definitions.xml" />
+	</plug-in>
+
+</struts-config>

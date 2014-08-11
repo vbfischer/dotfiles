@@ -1,0 +1,12 @@
+#!/bin/sh
+
+currentWeekDate=$(date +%Y-%m-%d)
+lastWeekDate=$(date -v-7d +%Y-%m-%d)
+
+myRevisions=$(svn log -q -r {"$lastWeekDate"}:{"$currentWeekDate"} | grep 'bfischer' | awk '/\|/ { print $1 }')
+
+for revision in "${myRevisions[@]}"
+do
+  echo "${revision}"
+done
+#echo $myRevisions

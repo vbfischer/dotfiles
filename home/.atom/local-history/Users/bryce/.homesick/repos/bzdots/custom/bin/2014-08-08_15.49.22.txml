@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+var exec = require('child_process').exec,
+    Q = require('q'),
+    jade = require('jade');
+
+function getTodoItems() {
+  var deferred = Q.defer();
+  exec('/Users/bryce/.homesick/repos/bzdots/custom/bin/todo.sh -p list', function(error, stdout, stdin) {
+    deferred.resolve(stdout);
+  });
+
+  return deferred.promise;
+}
+
+getTodoItems().then(function(response) {
+  var model = {
+    items: [
+      {
+        id: 1,
+        text: 'Home Call Dealership'
+      }
+    ]
+  };
+
+  var itemsArray = response.split('\n');
+
+  if(itemsArray) {
+    itemsArray.forEach(function(item) {
+      var id = item.substr(0, item.indexOf(' '));
+      model.items.push({
+        id: id,
+        text: item
+      });
+    });
+  }
+
+  var fn = jade.compileFile('templates/todolist.jade');
+  var xml = fn(model);
+
+  console.log(xml);
+});

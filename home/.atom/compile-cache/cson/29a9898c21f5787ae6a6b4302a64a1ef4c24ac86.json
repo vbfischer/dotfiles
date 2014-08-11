@@ -1,0 +1,1 @@
+{"context-menu":{".overlayer":{"Open in Marked.app":"marked:open"}},"menu":[{"label":"Packages","submenu":[{"label":"Marked","submenu":[{"label":"Open in Marked","command":"marked:open"}]}]}]}

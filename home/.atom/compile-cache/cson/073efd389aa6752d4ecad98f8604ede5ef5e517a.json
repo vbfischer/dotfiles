@@ -1,0 +1,1 @@
+{".source.h, .source.m":{"appledoc":{"prefix":"appledoc","body":"/**\n* ${1:Description of what this method does}\n* \n* @param ${2:Parameter Name} ${3:Purpose of the parameter}\n* \n* @return ${4:Explanation of this method's return value}\n*/"}}}

@@ -1,0 +1,12 @@
+{
+  "name": "darkula-syntax",
+  "theme": "syntax",
+  "version": "0.3.0",
+  "private": false,
+  "description": "An Atom theme inspired by the Darkula theme from IntelliJ IDEA.",
+  "repository": "https://github.com/benburton/darkula-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}

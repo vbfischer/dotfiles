@@ -1,0 +1,133 @@
+".source.js":
+  "collection.extend":
+    "prefix": "bbc-extend"
+    "body": """
+    var ${1:collection} = Backbone.Collection.extend({
+      model: ${2:/* Set initial code */},
+    });
+  """
+  "collection.models":
+    "prefix": "bbc-models"
+    "body": """
+       var ${1:variable} = ${2:collection}.models;
+    """
+  "collection.toJSON":
+    "prefix": "bbc-toJSON"
+    "body": """
+       var ${1:variable} = ${2:collection}.toJSON(${3:[options]});
+    """
+  "collection.sync":
+    "prefix": "bbc-sync"
+    "body": """
+       ${1:collection}.sync(${2:method}, ${3:collection}, ${4:[options]});
+    """
+  "collection.add":
+    "prefix": "bbc-add"
+    "body": """
+       ${1:collection}.add(${2:[/*models*/]}, ${3:[options]});
+    """
+  "collection.remove":
+    "prefix": "bbc-remove"
+    "body": """
+      ${1:collection}.remove(${2:[/*models*/} ], ${3:[options]});
+    """
+  "collection.reset":
+    "prefix": "bbc-reset"
+    "body": """
+      ${1:collection}.reset((${2:[/*models*/]}, ${3:[options]});
+    """
+  "collection.set":
+    "prefix": "bbc-set"
+    "body": """
+      ${1:collection}.set(${2:[/*models*/]}, ${3:[options]});
+    """
+  "collection.get":
+    "prefix": "bbc-get"
+    "body": """
+      var ${1:model} = ${2:collection}.get(${3:id});
+    """
+  "collection.at":
+    "prefix": "bbc-at"
+    "body": """
+      var ${1:model} = ${2:collection}.at(${3:index});
+    """
+  "collection.put":
+    "prefix": "bbc-put"
+    "body": """
+      ${1:collection}.push(${2:model}, ${3:[options]});
+    """
+  "collection.unshift":
+    "prefix": "bbc-unshift"
+    "body": """
+      ${1:collection}.unshift(${2:model}, ${3:[options]});
+    """
+  "collection.shift":
+    "prefix": "bbc-shift"
+    "body": """
+      ${1:collection}.shift(${2:[options]});
+    """
+  "collection.pop":
+    "prefix": "bbc-pop"
+    "body": """
+      ${1:collection}.pop(${:[options]});
+    """
+  "collection.slice":
+    "prefix": "bbc-slice"
+    "body": """
+      ${1:collection}.slice(${2:begin}, ${3:end});
+    """
+  "collection.length":
+    "prefix": "bbc-length"
+    "body": """
+      ${1:collection}.length;
+    """
+  "collection.comparator":
+    "prefix": "bbc-comparator"
+    "body": """
+      ${1:collection}.comparator = "${2:key}";
+    """
+  "collection.sort":
+    "prefix": "bbc-sort"
+    "body": """
+      ${1:collection}.sort(${2:[options]});
+    """
+  "collection.pluck":
+    "prefix": "bbc-pluck"
+    "body": """
+      ${1:collection}.pluck("${2:attribute}");
+    """
+  "collection.where":
+    "prefix": "bbc-where"
+    "body": """
+      ${1:collection}.where("${2:attribute}");
+    """
+  "collection.findwhere":
+    "prefix": "bbc-findwhere"
+    "body": """
+      ${1:collection}.findWhere( "${2:attribute}" );
+    """
+  "collection.url":
+    "prefix": "bbc-url"
+    "body": """
+      ${1:collection}.url = "${2:url}";
+    """
+  "collection.parse":
+    "prefix": "bbc-parse"
+    "body": """
+      ${1:collection}.parse( response, options);
+    """
+  "collection.clone":
+    "prefix": "bbc-clone"
+    "body": """
+      ${1:collection}.clone();
+    """
+  "collection.fetch":
+    "prefix": "bbc-fetch"
+    "body": """
+      ${1:collection}.fetch(${2}[options]});
+    """
+  "collection.create":
+    "prefix": "bbc-create"
+    "body": """
+      ${1:collection}.create(${2:attributes}, ${3:[options]});
+    """

@@ -1,0 +1,11 @@
+{
+  "name": "base16-mochadark-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "Port of the base16 Mocha Syntax (http://chriskempson.github.io/base16/#mocha)",
+  "repository": "https://github.com/emilyemorehouse/base16-mochadark-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}

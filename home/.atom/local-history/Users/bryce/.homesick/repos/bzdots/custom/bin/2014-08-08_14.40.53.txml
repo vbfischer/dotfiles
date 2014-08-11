@@ -1,0 +1,5 @@
+#! /bin/bash
+
+ITEMS=('/Users/bryce/.homesick/repos/bzdots/custom/bin/todo.sh -p list')
+
+echo $ITEMS

@@ -1,0 +1,26 @@
+{
+  "name": "atom-darcula",
+  "theme": "ui",
+  "version": "0.2.0",
+  "description": "RubyMine Darcula inspired theme.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergiotapia/atom-darcula"
+  },
+  "engines": {
+    "atom": ">0.40.0"
+  },
+  "readme": "# Atom Darcula theme\n\nRubyMine's Darcula inspired UI theme for Atom.\n\n![](http://i.imgur.com/94WYPUB.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/sergiotapia/atom-darcula/issues"
+  },
+  "homepage": "https://github.com/sergiotapia/atom-darcula",
+  "_id": "atom-darcula@0.2.0",
+  "dist": {
+    "shasum": "07cf4b3671e60ccdbc4cbceec464ba2ea35aed26"
+  },
+  "_resolved": "/var/folders/yv/4x6cgs8d2w3bnp2rx8qbywrh0000gn/T/d-11472-92689-1e4yk9h/package.tgz",
+  "_from": "/var/folders/yv/4x6cgs8d2w3bnp2rx8qbywrh0000gn/T/d-11472-92689-1e4yk9h/package.tgz"
+}

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+lastWeekDate=$(date -v-7d)
+
+svn info -r {'$lastWeekDate'}

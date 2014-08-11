@@ -1,0 +1,57 @@
+@java-comment-block-font-style: normal;
+@java-storage-type-annotation-color: @tumeric;
+@java-storage-type-primitive-color: @amethyst-smoke;
+@java-operator-color: @heather;
+@java-constant-variable-font-style: italic;
+@java-constant-other-font-style: italic;
+@java-storage-modifier-color: @raw-sienna;
+@java-storage-modifier-font-weight: 400;
+@java-punctuation-terminator-color: @raw-sienna;
+@java-method-entity-name-color: @chardonnay;
+
+.editor .java {
+
+  .comment.block {
+    font-style: @java-comment-block-font-style;
+  }
+
+  .storage.type {
+    &.annotation {
+      color: @java-storage-type-annotation-color;
+    }
+
+    &.primitive {
+      color: @java-storage-type-primitive-color;
+    }
+  }
+
+  .operator {
+    color: @java-operator-color;
+  }
+
+  .constant {
+    &.other {
+      font-style: @java-constant-other-font-style;
+    }
+
+    &.variable {
+      font-style: @java-constant-variable-font-style;
+    }
+  }
+
+  .storage.modifier {
+    color: @java-storage-modifier-color;
+    font-weight: @java-storage-modifier-font-weight;
+  }
+
+  .punctuation.terminator {
+    color: @java-punctuation-terminator-color;
+  }
+
+  .method {
+    .entity.name {
+      color: @java-method-entity-name-color;
+    }
+  }
+
+}

@@ -1,0 +1,62 @@
+.source.python {
+  .entity {
+    color: @base0;
+
+    &.name {
+      color: @blue;
+    }
+    &.other {
+      color: @blue;
+    }
+  }
+  .punctuation.string {
+    color: @cyan;
+  }
+  .keyword {
+    &.operator {
+      color: @base0;
+      &.quantifier {
+        color: @cyan;
+      }
+    }
+    &.control.import {
+      color: @red;
+    }
+    &.other {
+      color: @blue;
+      &.python {
+        color: @green;
+      }
+    }
+  }
+  .constant {
+    &.language {
+      color: @blue;
+    }
+    &.character {
+      color: @cyan;
+    }
+    &.other {
+      color: @red;
+    }
+  }
+  .variable {
+    color: @base0;
+  }
+  .support {
+    &.function.builtin {
+      color: @blue;
+    }
+    &.type {
+      &.exception.python {
+        color: @yellow;
+      }
+      &.python {
+        color: @blue;
+      }
+    }
+  }
+  .storage.type.string {
+    color: @cyan;
+  }
+}

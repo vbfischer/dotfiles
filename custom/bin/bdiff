@@ -1,0 +1,9 @@
+#!/bin/sh
+
+BEACON_TRUNK=/Users/bryce/Code/BEACON
+BEACON_BRANCH=/Users/bryce/Code/BEACON_branch
+
+origFile=$BEACON_TRUNK/$1
+branchFile=$BEACON_BRANCH/$1
+
+ksdiff $origFile $branchFile

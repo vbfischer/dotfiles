@@ -1,0 +1,102 @@
+// These colors are based on Darkula from RubyMine
+
+@ruby-entity-name-class-color: @terracotta;
+@ruby-entity-name-class-punctuation-color: @raw-sienna;
+@ruby-other-inherited-class-color: @terracotta;
+@ruby-meta-require-keyword-color: @terracotta;
+@ruby-meta-require-font-weight: normal;
+@ruby-meta-function-name-color: @chardonnay;
+@ruby-keyword-weight: normal;
+@ruby-constant-boolean-color: @raw-sienna;
+@ruby-constant-symbol-color: @glacier2;
+@ruby-string-quoted-double-color: @apple;
+@ruby-string-quoted-double-font-weight: bold;
+@ruby-string-quoted-double-embedded-line-color: @heather;
+@ruby-string-quoted-double-embedded-line-font-weight: normal;
+@ruby-support-class-color: @terracotta;
+@ruby-punctuation-separator-variable-color: @raw-sienna;
+@ruby-variable-block-color: @raw-sienna;
+
+.editor .ruby {
+
+  .keyword {
+    font-weight: @ruby-keyword-weight;
+
+    &.other.special-method {
+      color: @terracotta;
+    }
+  }
+
+  .entity {
+    &.name.class {
+      color: @ruby-entity-name-class-color;
+
+      .punctuation {
+        color: @ruby-entity-name-class-punctuation-color;
+      }
+    }
+
+    &.other.inherited-class {
+      color: @ruby-other-inherited-class-color;
+    }
+  }
+
+  .meta {
+    &.require .keyword {
+      font-weight: @ruby-meta-require-font-weight;
+      color: @ruby-meta-require-keyword-color;
+    }
+
+    &.function {
+      .function.name {
+        color: @ruby-meta-function-name-color;
+      }
+    }
+  }
+
+  .constant {
+    &.boolean {
+      color: @ruby-constant-boolean-color;
+    }
+
+    &.numeric {
+      color: @wild-willow;
+    }
+
+    &.symbol {
+      color: @ruby-constant-symbol-color;
+
+      .punctuation {
+        color: @ruby-constant-symbol-color;
+      }
+    }
+  }
+
+  .string.quoted.double {
+    color: @ruby-string-quoted-double-color;
+    font-weight: @ruby-string-quoted-double-font-weight;
+
+    & * {
+      color: @ruby-string-quoted-double-color;
+      font-weight: @ruby-string-quoted-double-font-weight;
+    }
+
+    & .embedded.line {
+      color: @ruby-string-quoted-double-embedded-line-color;
+      font-weight: @ruby-string-quoted-double-embedded-line-font-weight;
+    }
+  }
+
+  .support.class {
+    color: @ruby-support-class-color;
+  }
+
+  .punctuation.separator.variable {
+    color: @ruby-punctuation-separator-variable-color;
+  }
+
+  .variable.block {
+    color: @ruby-variable-block-color;
+  }
+
+}

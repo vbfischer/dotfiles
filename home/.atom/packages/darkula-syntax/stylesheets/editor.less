@@ -1,0 +1,56 @@
+@editor-color: @heather;
+@editor-background-color: @mine-shaft;
+@editor-invisible-character-color: inherit;
+@editor-indent-guide-color: inherit;
+@editor-cursor-line-background-color: @tundora;
+@editor-cursor-border-color: inherit;
+@editor-wrap-guide-background-color: @tundora;
+@editor-constant-color: @amethyst-smoke;
+@editor-constant-numeric-color: @glacier;
+@editor-constant-boolean-color: @amethyst-smoke;
+
+.editor-colors {
+  background-color: @editor-background-color;
+  color: @editor-color;
+}
+
+.editor {
+
+  .invisible-character {
+    color: @editor-invisible-character-color;
+  }
+
+  .indent-guide {
+    color: @editor-indent-guide-color;
+  }
+
+  .cursor {
+    border-color: @editor-cursor-border-color;
+  }
+
+  .cursor-line {
+    background-color: @editor-cursor-line-background-color;
+  }
+
+  .selection .region {
+    background-color: @editor-selection-background-color;
+  }
+
+  .wrap-guide {
+    background-color: @editor-wrap-guide-background-color;
+  }
+
+  .constant {
+    color: @editor-constant-color;
+
+    &.numeric {
+      color: @editor-constant-numeric-color;
+    }
+
+    &.boolean {
+      color: @editor-constant-boolean-color;
+    }
+
+  }
+
+}

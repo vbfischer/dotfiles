@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+projpath=$BEACON_TRUNK
+
+if [ -z "$1" ]
+  then
+    projpath=$BEACON_TRUNK
+  else
+    projpath=$1
+fi
+
+cd $projpath/WebClient/BEACONSenchaWebClient/src/main/tools/node/servers/
+node beacon
