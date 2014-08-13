@@ -1,0 +1,4 @@
+.subversion/auth
+compile-cache/
+local-history/
+home/.atom/storage/

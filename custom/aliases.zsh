@@ -6,6 +6,8 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 
+alias svu="svn update"
+
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
@@ -108,3 +110,10 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# other
+div() {
+	local columns=$(($(tput cols) - 8))
+	local line=$(printf '%0.1s' "-"{1..500})
+	printf "\e[01;31m---- 8< ${line:0:${columns}}\e[0m\n"
+}

@@ -244,3 +244,8 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function gi() {
+	curl http://www.gitignore.io/api/$@;
+	
+}
