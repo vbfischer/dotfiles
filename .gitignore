@@ -3,3 +3,5 @@ compile-cache/
 local-history/
 home/.atom/storage/
 home/.atom/.node-gyp/
+node_modules/
+.subversion/auth/
