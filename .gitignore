@@ -2,3 +2,4 @@
 compile-cache/
 local-history/
 home/.atom/storage/
+home/.atom/.node-gyp/

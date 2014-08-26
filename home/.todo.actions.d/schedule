@@ -30,11 +30,31 @@ function add {
 	item=$1
 	threshold=$2
 
-	flag=`sed -e "$item!d" "$TODO_FILE" | grep "$pattern"`
+	if [ "$threshold" = "next week" ]; then
+		threshold="+1w"
+	fi
 
+	if [ "$threshold" = "tomorrow" ]; then
+		threshold="+1d"
+	fi
+
+	if [ "$threshold" = "next month" ]; then
+		threshold="+1m"
+	fi
+
+	if [ "$threshold" = "next year" ]; then
+		threshold="+1y"
+	fi
+
+	flag=`sed -e "$item!d" "$TODO_FILE" | grep "$pattern"`
 	if [ -z "$flag" ]; then
+		echo "Not replacing"
+		echo $TODO_FULL_SH append $item "t:"`date -v"$threshold" +%F`
 		$TODO_FULL_SH append $item "t:"`date -v"$threshold" +%F`
 	else
+		echo "Replacing..."
+		echo $flag
+		echo replace $item "$threshold"
 		replace $item "$threshold"
 	fi
 }
@@ -50,14 +70,15 @@ function remove {
 }
 
 function replace {
+	echo "in replace method"
 	item=$1
 	threshold=$2
 	remove $item
+	echo add $item "$threshold"
 	add $item "$threshold"
 }
 
 [ "$action" = "usage" ] && usage
-
 if [ -z $item ]; then
 	list
 elif [ "$param" = "rm" ]; then

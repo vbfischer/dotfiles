@@ -1,0 +1,58 @@
+{
+  "name": "markdown-writer",
+  "main": "./lib/main",
+  "version": "0.6.2",
+  "description": "Atom as a Markdown blogging editor",
+  "activationEvents": [
+    "markdown-writer:new-post",
+    "markdown-writer:new-draft",
+    "markdown-writer:publish-draft",
+    "markdown-writer:insert-link",
+    "markdown-writer:insert-image",
+    "markdown-writer:toggle-code-text",
+    "markdown-writer:toggle-codeblock-text",
+    "markdown-writer:toggle-bold-text",
+    "markdown-writer:toggle-italic-text",
+    "markdown-writer:toggle-keystroke-text",
+    "markdown-writer:toggle-strikethrough-text",
+    "markdown-writer:toggle-h1",
+    "markdown-writer:toggle-h2",
+    "markdown-writer:toggle-h3",
+    "markdown-writer:toggle-h4",
+    "markdown-writer:toggle-h5",
+    "markdown-writer:toggle-ul",
+    "markdown-writer:toggle-ol",
+    "markdown-writer:toggle-task",
+    "markdown-writer:toggle-taskdone",
+    "markdown-writer:toggle-blockquote",
+    "markdown-writer:manage-post-tags",
+    "markdown-writer:manage-post-categories"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhuochun/md-writer"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.50.0"
+  },
+  "dependencies": {
+    "fs-plus": "2.x",
+    "request": "2.x",
+    "js-yaml": "3.x",
+    "guid": "0.0.12",
+    "season": "2.x"
+  },
+  "readme": "# Markdown-Writer for Atom\n\nUse [Atom](https://atom.io/) as a Markdown blogging editor. Great for [Jekyll](http://jekyllrb.com/), [Hexo](http://hexo.io/) and other static blogs.\n\n![Insert Image](http://i.imgur.com/s9ekMns.gif)\n\nMore GIFs Here:\n\n- [Create New Post](http://i.imgur.com/BwntxhB.gif)\n- [Insert Reference Link](http://i.imgur.com/L67TqyF.gif)\n- [Remove Reference Link](http://i.imgur.com/TglzeJV.gif)\n\n## Features\n\n- Dialog to **create new post**.\n  In Command Palette (`shift-cmd-P`), type `Markdown Writer: New Post`.\n- Dialog to **create new draft**.\n  In Command Palette (`shift-cmd-P`), type `Markdown Writer: New Draft`.\n- **Publish draft** moves current draft to `posts` directory. It updates `date` and rename the post using `title` in front matter.\n  In Command Palette (`shift-cmd-P`), type `Markdown Writer: Publish Draft`.\n- Dialog to **manage tags/categories in front matter**.\n  In Command Palette (`shift-cmd-P`), type `Markdown Writer: Manage Post Tags/Categories`\n- Dialog to **insert link (`shift-cmd-k`) and automatically link to the text next time** (my favorite feature from Windows Live Writer).\n  - Insert inline link by default\n  - Insert reference link if title is specified\n  - Remove link (and its reference) after URL is deleted\n- Dialog to **insert image (`shift-cmd-i`), with width/height auto-detected**.\n  In Command Palette (`shift-cmd-P`), type `Markdown Writer: Insert Image`\n- **Toggle text styles**:\n  - `code` (`cmd-'`)\n  - **bold** (`cmd-b`)\n  - _italic_ (`cmd-i`)\n  - ~~strikethrough~~ (`cmd-h`)\n  - `'''codeblock'''` (`shift-cmd-\"`)\n  - `<kbd>key</kbd>` (<kbd>cmd</kbd> + <kbd>k</kbd>)\n  - `- unordered list` (`shift-cmd-U`)\n  - `0. ordered list` (`shift-cmd-O`)\nshift-cmd-I\n  - `> blockquote` (`shift-cmd->`)\n- **Toggle headings**: `alt-[1-5]` to switch among `H1` to `H5`.\n\n## Setup\n\nYou need to config markdown-writer to use most of the features.\n\nGo to `Preferences` (`cmd-,`), search `markdown writer` package.\n\n### Settings Explained:\n\n- **siteLocalDir**: The root directory of blog/jekyll\n- **siteDraftsDir**: The directory of drafts from the root of `siteLocalDir`. Default is `_draft/`.\n- **sitePostsDir**: The directory of posts from the root of `siteLocalDir`. Default is `_posts/{year}`. You can also use `{year}`, `{month}` and `{day}`.\n- **urlForTags**: The URL to tags `JSON` file. Refer to next section.\n- **urlForPosts**: The URL to posts `JSON` file. Refer to next section.\n- **urlForCategories**: The URL to categories `JSON` file. Refer to next section.\n\n### Advance Settings:\n\nTo change these settings, open your Atom config file, find `markdown-writer` entry.\n\n- **siteLinkPath**: Define path (string) to a `.cson` file that stores all links added for automatic linking next time.\n  Default uses `markdown-writer-links.cson` in Atom's config directory.\n- **frontMatter**: Define front matter (string) used when create new post/draft.\n- **publishRenameBasedOnTitle**: Determine whether publish rename filename based on title in front matter. Default is `false` (boolean).\n- **publishKeepFileExtname**: Determine whether publish keep draft's extname used. Default is `false` (boolean).\n- **codeblock**: Define fenced code block (object). Default uses GitHub's fenced code block.\n- **imageTag**: Define image tag inserted (string). Default uses `![alt](img-url)`.\n\nThis is an example of advance setting's configuration:\n\n```coffee\n'markdown-writer':\n  # sync the links in dropbox\n  'siteLinkPath': '/Users/zhuochun/Dropbox/blog/links.cson'\n  # use Hexo front matter format\n  'frontMatter': \"\"\"\n  layout: <layout>\n  title: \"<title>\"\n  date: \"<date>\"\n  ---\n  \"\"\"\n  # use jekyll highlight code block, change this requires reload\n  'codeblock':\n    'before': '{% highlight %}\\n'\n    'after': '\\n{% endhighlight %}'\n    'regexBefore': '{% highlight(?: .+)? %}\\n'\n    'regexAfter': '\\n{% endhighlight %}'\n  # use img html tag\n  'imageTag': '<img alt=\"<alt>\" src=\"<src>\" width=\"<width>\" height=\"<height>\" class=\"aligncenter\" />'\n```\n\n## Populate Tags/Categories/Posts\n\n![Manage Tags](http://i.imgur.com/amt2m0Y.png)\n\nTo **manage tags/categories in front matter**, you need to provide `JSON` files that list existing tags/categories/posts in your blog.\n\nThe `JSON` files contain following information of your blog:\n\n```json\n{\n  \"tags\": [\"tag a\", \"tag b\", \"...\"],\n  \"categories\": [\"category a\", \"category b\", \"...\"],\n  \"posts\": [{\"title\": \"title\", \"url\": \"url\"}]\n}\n```\n\nFor **Jekyll** users, you can add [these scripts](https://gist.github.com/zhuochun/fe127356bcf8c07ae1fb) to your Jekyll directory and upload the generated `JSON` files.\n\nFor **Hexo** users, you can install [hexo-generator-atom-markdown-writer-meta](https://github.com/timnew/hexo-generator-atom-markdown-writer-meta) (Thanks to [@timnew](https://github.com/timnew)).\n\n### TODOs\n\n- Insert table\n- Insert footnote\n- Support multiple blog directories\n\nView [CHANGELOG :notebook_with_decorative_cover:](https://github.com/zhuochun/md-writer/blob/master/CHANGELOG.md).\n\nIf you found any bug, please submit an issue [here :octocat:](https://github.com/zhuochun/md-writer/issues).\n\nLicense in [MIT :unlock:](https://github.com/zhuochun/md-writer/blob/master/LICENSE.md).\n\n## Tips\n\n- Jumping among your posts: `Cmd-t` or `Cmd-p`.\n- Markdown Preview: [markdown-preview](https://atom.io/packages/markdown-preview) package.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/zhuochun/md-writer/issues"
+  },
+  "homepage": "https://github.com/zhuochun/md-writer",
+  "_id": "markdown-writer@0.6.2",
+  "dist": {
+    "shasum": "cd66d9054bb937d8143dc5dcf9731d7f15a2e2be"
+  },
+  "_resolved": "/var/folders/yv/4x6cgs8d2w3bnp2rx8qbywrh0000gn/T/d-114715-22145-2h8i7h/package.tgz",
+  "_from": "/var/folders/yv/4x6cgs8d2w3bnp2rx8qbywrh0000gn/T/d-114715-22145-2h8i7h/package.tgz"
+}
