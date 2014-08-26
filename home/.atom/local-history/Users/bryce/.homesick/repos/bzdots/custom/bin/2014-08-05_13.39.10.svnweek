@@ -1,5 +1,0 @@
-#!/bin/sh
-
-lastWeekDate=$(date -v-7d)
-
-svn log -r {"2014-07-29"}

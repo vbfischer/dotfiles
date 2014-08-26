@@ -1,1 +1,0 @@
-{".source.js":{"Backbone.Library":{"prefix":"bb.","body":"Backbone.${1}"},"Backbone.View":{"prefix":".v","body":".View.${1}"},"Backbone.Collection":{"prefix":".c","body":".Collection.${1}"},"Backbone.Model":{"prefix":".m","body":".Model.${1}"},"Backbone.Router":{"prefix":".r","body":".Router.${1}"},"Backbone.extend":{"prefix":".ex","body":".extend({ ${1} });"}}}

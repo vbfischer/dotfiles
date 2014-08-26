@@ -1,1 +1,0 @@
-{"context-menu":{".overlayer":{"Enable fancy-new-file":"fancy-new-file:toggle"}},"menu":[{"label":"Packages","submenu":[{"label":"Fancy New File","command":"fancy-new-file:toggle"}]}]}

@@ -1,1 +1,0 @@
-{".source.js":{"view.extend":{"prefix":"bbv-extend","body":"var ${1:variable} = Backbone.View.extend({\n});"},"view.setElement":{"prefix":"bbv-setelement","body":"${1:view}.setElement(${2:element});"}}}

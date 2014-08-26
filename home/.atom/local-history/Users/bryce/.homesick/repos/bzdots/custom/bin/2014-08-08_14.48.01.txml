@@ -1,7 +1,0 @@
-#! /bin/bash
-
-ITEMS=$(/Users/bryce/.homesick/repos/bzdots/custom/bin/todo.sh -p list)
-
-for item in $ITEMS ; do
-  echo $item
-done

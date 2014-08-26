@@ -1,6 +1,0 @@
-#!/bin/sh
-
-lastWeekDate=$(date -v-7d +'yyyy-mm-dd' +%Y-%m-%d)
-
-# svn log -r {"2014-07-29"}:{"2014-08-05"}
-echo $lastWeekDate
