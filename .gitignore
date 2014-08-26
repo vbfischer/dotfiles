@@ -5,3 +5,4 @@ home/.atom/storage/
 home/.atom/.node-gyp/
 node_modules/
 .subversion/auth/
+home/.atom/packages/
