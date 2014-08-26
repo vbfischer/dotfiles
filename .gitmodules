@@ -1,0 +1,3 @@
+[submodule "home/.todo.actions.d/recur"]
+	path = home/.todo.actions.d/recur
+	url = git@github.com:vbfischer/recur.git
