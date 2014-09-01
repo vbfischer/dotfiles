@@ -30,3 +30,6 @@ export BEACON_BRANCH="/Users/bryce/Code/BEACON_branch"
 
 export SVN_ROOT=http://amherst/subversion/POC
 export BEACON_REP_ROOT=$SVN_ROOT/Applications/BEACON/
+
+export TODO_SSL_KEY="/Users/bryce/.ssh/key.pem"
+export TODO_SSL_CERT="/Users/bryce/.ssh/cert.pem"
