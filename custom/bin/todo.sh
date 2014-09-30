@@ -859,6 +859,7 @@ _format()
     if [[ $TODOTXT_DISABLE_FILTER = 1 ]]; then
         TODOTXT_FINAL_FILTER="cat"
     fi
+
     items=$(
         if [ "$FILE" ]; then
             sed = "$FILE"
