@@ -1,4 +1,4 @@
-export ANTIGEN_HOME=$HOME/.homesick/repos/bzdots/antigen
+export ANTIGEN_HOME=$HOME/.antigen
 
 source $ANTIGEN_HOME/antigen.zsh
 
@@ -8,7 +8,7 @@ source $ANTIGEN_HOME/antigen.zsh
 
 # ZSH_THEME="ys"
 
-ZSH_CUSTOM=$HOME/.homesick/repos/bzdots/custom
+ZSH_CUSTOM=$HOME/Code/dotfiles/custom
 
 plugins=(jsontools svn sublime fasd)
 
@@ -45,6 +45,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # antigen theme robbyrussell
 antigen apply
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 source $ZSH_CUSTOM/paths.zsh
 
