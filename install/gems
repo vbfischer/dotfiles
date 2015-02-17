@@ -1,0 +1,7 @@
+gem install bigdecimal
+gem install io-console
+gem install json
+gem install gisty
+gem install lunchy
+gem install bropages
+gem install foreman

@@ -1,3 +1,5 @@
+export GISTY_DIR="$HOME/Code/gists"
+
 # Setup environment for development
 PROJECT_PATHS=(~/Code ~/Documents/Work ~/Projects)
 # Oracle Weblogic Middleware Home
@@ -7,7 +9,7 @@ export USER_MEM_ARGS="-Xmx1024m -XX:MaxPermSize=256m"
 export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
 
 #export JAVA_HOME=$(/usr/libexec/java_home -v1.6)
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
 export MAVEN_OPTS='-Xms128m -Xmx796m -XX:PermSize=64m -XX:MaxPermSize=172m'
 
 export DEV1_ENV="wmecrmd01.idexxi.com"
@@ -35,3 +37,6 @@ export BEACON_REP_ROOT=$SVN_ROOT/Applications/BEACON/
 
 export TODO_SSL_KEY="/Users/bryce/.ssh/key.pem"
 export TODO_SSL_CERT="/Users/bryce/.ssh/cert.pem"
+export LC_ALL=C
+
+export WEBAPP_TRUNK=$BEACON_TRUNK/WebClient/BEACONSenchaWebClient/src/main/webapp

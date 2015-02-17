@@ -6,7 +6,26 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 
+#FASD Aliases
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+
+# Helper aliases
+alias zshconfig="stt ~/.zshrc"
+alias ohmyzsh="stt ~/.oh-my-zsh"
+alias sourceohmyzsh="source ~/.zshrc"
+alias npmlist="npm -g ls --depth=0 2>/dev/null"
+
+alias stbeacon="node ~/Code/BEACON/WebClient/BEACONSenchaWebClient/src/main/tools/node/servers/beacon"
+alias dweb="stt ~/Code/BEACON/WebClient/BEACONSenchaWebClient/src/main/webapp"
 alias svu="svn update"
+alias buildproj="$ mvn clean install -Pidexx-internal,nt"
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
@@ -110,6 +129,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+alias jdk16="$(/usr/libexec/java_home -v1.6)"
+alias jdk17="$(/usr/libexec/java_home -v1.7)"
 
 # other
 div() {

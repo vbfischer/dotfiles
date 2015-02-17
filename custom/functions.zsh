@@ -16,6 +16,25 @@ function calc() {
 	printf "\n";
 }
 
+function buildmvn () {
+	mvn
+}
+
+function builddweb() {
+	cd "$WEBAPP_TRUNK/desktop"
+	sencha app build
+}
+
+function buildmobile() {
+	cd "$WEBAPP_TRUNK/mobile"
+	sencha app build
+}
+
+function buildall() {
+	builddweb
+	buildmobile
+}
+
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$@";
@@ -207,26 +226,6 @@ function s() {
 	fi;
 }
 
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-function a() {
-	if [ $# -eq 0 ]; then
-		atom .;
-	else
-		atom "$@";
-	fi;
-}
-
-# `v` with no arguments opens the current directory in Vim, otherwise opens the
-# given location
-function v() {
-	if [ $# -eq 0 ]; then
-		vim .;
-	else
-		vim "$@";
-	fi;
-}
-
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
 function o() {
@@ -246,6 +245,6 @@ function tre() {
 }
 
 function gi() {
-	curl http://www.gitignore.io/api/$@;
+	curl https://www.gitignore.io/api/$@;
 
 }

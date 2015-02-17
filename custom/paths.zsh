@@ -1,4 +1,11 @@
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/shims"
-export PATH="$PATH:$HOME/opt/Sencha/Cmd/4.0.0.203"
-export PATH="$PATH:/Users/bryce/Development/tools/apache-maven-3.1.1/bin" 
+path=(
+    /usr/local/{bin,sbin}
+    ~/.rbenv/shims
+    ~/bin
+    /usr/local/opt/coreutils/libexec/gnubin
+    $(brew --prefix homebrew/php/php55)/bin
+    $(brew --prefix homebrew/apache/httpd24)/bin
+    $path
+    ~/opt/Sencha/Cmd/4.0.0.203
+    $ZSH_CUSTOM/bin
+)
