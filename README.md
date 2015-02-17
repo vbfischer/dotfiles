@@ -10,13 +10,15 @@ First will need to install homesick:
     gem install homesick
     homesick clone vbfischer/dotfiles
     homesick symlink
-    
+
+## Todo:
+* want better way than using homesick above. Should be simple to write a script to do the symlinks, etc....
+
 ## Resources
 The following are resources I used when making my dotfiles:
 * [GitHub's page on dotfiles][http://dotfiles.github.io] is used as a starting point.
 * [Zach Holman's dotfiles][https://github.com/holman/dotfiles] was probably my primary source.
-* [Mathias Bynen's dotfiles][https://github.com/mathiasbynens/dotfiles] was equally important. 
+* [Mathias Bynen's dotfiles][https://github.com/mathiasbynens/dotfiles] was equally important.
 * [oh-my-zsh][https://github.com/robbyrussell/oh-my-zsh] provides most functionality.
 
 I tried to leave comments with where they came from, but its likely in my cut/paste/etc it might have gotten removed. If you see something, let me know.
-    
