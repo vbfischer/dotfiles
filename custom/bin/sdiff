@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-
-
-svn diff $1 -r $2
