@@ -1,3 +1,6 @@
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 export GISTY_DIR="$HOME/Code/gists"
 
 # Setup environment for development

@@ -1,2 +1,18 @@
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export BASE_PATH=~/Code/dotfiles
+export ZILSH_VERBOSITY=2
+ZILSH_THEME="robbyrussell.zsh-theme"
+
+path=(
+  /usr/local/{bin,sbin}
+  ~/.rbenv/shims
+  ~/bin
+  /usr/local/opt/coreutils/libexec/gnubin
+  $path
+  ~/bin/Sencha/Cmd/4.0.5.87
+)
+
+source $BASE_PATH/zilsh/zilsh.zsh
+
+omz_plugins=(node git npm brew fasd)
+
+_zilsh_init "$BASE_PATH/bundle/"
