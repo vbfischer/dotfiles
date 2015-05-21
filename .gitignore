@@ -6,3 +6,6 @@ home/.atom/.node-gyp/
 node_modules/
 .subversion/auth/
 home/.atom/packages/
+
+.DS_Store
+.DS_Store/

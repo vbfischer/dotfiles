@@ -18,7 +18,7 @@ end
 local mash_modifiers = utils.mods.CASC
 local splitModifiers = mash_modifiers;
 local app_modifiers = utils.mods.cAsC
-local modalModifiers = utils.mods.CAsc
+local modalModifiers = mash_modifiers;
 
 hs.hotkey.bind(mash_modifiers, '=', function() hs.pasteboard.setContents(hs.window.focusedWindow():id()) end)
 
@@ -29,21 +29,21 @@ hs.hotkey.bind(splitModifiers, 'RIGHT', function() Action.MoveToUnit.new(0.5, 0.
 hs.hotkey.bind(splitModifiers, 'H', function() hs.hints.windowHints() end)
 
 
-local position = HotkeyModal.new('Position', modalModifiers, '1')
+local position = HotkeyModal.new('Position', mash_modifiers, '1')
 position:bind({}, 'UP', function() hs.grid.pushWindowUp() end)
 position:bind({}, 'DOWN', function() hs.grid.pushWindowDown() end)
 position:bind({}, 'LEFT', function() hs.grid.pushWindowLeft() end)
 position:bind({}, 'RIGHT', function() hs.grid.pushWindowRight() end)
 position:bind({}, 'RETURN', function() position:exit() end)
 
-local resize = HotkeyModal.new('Resize', modalModifiers, '2')
+local resize = HotkeyModal.new('Resize', mash_modifiers, '2')
 resize:bind({}, 'UP', function() hs.grid:resizeWindowShorter() end)
 resize:bind({}, 'DOWN', function() hs.grid:resizeWindowTaller() end)
 resize:bind({}, 'LEFT', function() hs.grid:resizeWindowThinner() end)
 resize:bind({}, 'RIGHT', function() hs.grid:resizeWindowWider() end)
 resize:bind({}, 'RETURN', function() resize:exit() end)
 
-local move = HotkeyModal.new('Move', modalModifiers, '3')
+local move = HotkeyModal.new('Move', mash_modifiers, '3')
 move:bind({}, 'UP', function() hs.grid:pushWindowUp() end)
 move:bind({}, 'DOWN', function() hs.grid:pushWindowDown() end)
 move:bind({}, 'LEFT', function() hs.grid:pushWindowLeft() end)

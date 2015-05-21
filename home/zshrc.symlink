@@ -22,7 +22,6 @@ antigen bundles <<EOBUNDLES
     voronkovich/gitignore.plugin.zsh
     git-extras
 
-
     fasd
     brew
     nvm
@@ -31,9 +30,9 @@ antigen bundles <<EOBUNDLES
     rbenv
 
     djui/alias-tips
+    
+    # ZSH Prompt
     sindresorhus/pure
-    chriskempson/base16-iterm2
-    chriskempson/base16-shell base16-colors.dark.sh
     common-aliases
 
     zsh-users/zsh-completions src
@@ -41,13 +40,14 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 EOBUNDLES
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
 # antigen theme robbyrussell
 antigen apply
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+ZSH_HIGHLIGHT_STYLES[cursor]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
 
 source $ZSH_CUSTOM/paths.zsh
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
