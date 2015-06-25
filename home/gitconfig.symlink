@@ -1,11 +1,8 @@
-# Sample gitconfig
-#
-
 [hub]
         protocol = https
 [user]
         name = Bryce Fischer
-        email = bryce@berzerker-soft.com
+        email = bryce-fischer@idexx.com
 
 [alias]
         co = checkout
@@ -19,8 +16,8 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = /Users/bryce/.gitignore
-        editor = vim
+        excludesfile = /Users/bryce/.gitignore_global
+        editor = atom
 [apply]
         whitespace = nowarn
 [mergetool]

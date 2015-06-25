@@ -33,6 +33,3 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-alias jdk16="$(/usr/libexec/java_home -v1.6)"
-alias jdk17="$(/usr/libexec/java_home -v1.7)"

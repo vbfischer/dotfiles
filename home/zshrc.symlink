@@ -1,6 +1,7 @@
 export BASE_PATH=~/Code/dotfiles
 export ZILSH_VERBOSITY=2
-ZILSH_THEME="robbyrussell.zsh-theme"
+# ZILSH_THEME="robbyrussell.zsh-theme"
+ZILSH_THEME="af-magic.zsh-theme"
 
 path=(
   /usr/local/{bin,sbin}
@@ -13,6 +14,6 @@ path=(
 
 source $BASE_PATH/zilsh/zilsh.zsh
 
-omz_plugins=(node git npm brew fasd)
+omz_plugins=(node git npm brew fasd pj)
 
 _zilsh_init "$BASE_PATH/bundle/"
