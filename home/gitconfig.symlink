@@ -17,7 +17,7 @@
         ui = true
 [core]
         excludesfile = /Users/bryce/.gitignore_global
-        editor = atom
+        editor = vim
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -48,6 +48,3 @@
         tool = Kaleidoscope
 [merge]
         tool = Kaleidoscope
-[github]
-	user = vbfischer
-	token = 0bb2cbc1267ba03c4a76cbdeb34cc71c28a91887
