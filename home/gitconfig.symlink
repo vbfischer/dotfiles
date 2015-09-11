@@ -1,8 +1,8 @@
 [hub]
         protocol = https
 [user]
-        name = Bryce Fischer
-        email = bryce-fischer@idexx.com
+	name = Bryce Fischer
+	email = bryce-fischer@idexx.com
 
 [alias]
         co = checkout
@@ -10,13 +10,16 @@
         wtf     = !$ZSH_CUSTOM/bin/git-wtf
         rank-contributers = !$ZSH_CUSTOM/bin/git-rank-contributers
         count   = !git shortlog -sn
+        lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        lg = !"git lg1"
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
 [core]
-        excludesfile = /Users/bryce/.gitignore_global
+	excludesfile = /Users/fischer/.gitignore_global
         editor = vim
 [apply]
         whitespace = nowarn
@@ -34,11 +37,11 @@
         # Setting to git 2.0 default to surpress warning message
         default = simple
 [difftool "sourcetree"]
-        cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-        path =
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-        cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-        trustExitCode = true
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [difftool "Kaleidoscope"]
         cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]

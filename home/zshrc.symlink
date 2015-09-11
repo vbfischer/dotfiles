@@ -14,6 +14,6 @@ path=(
 
 source $BASE_PATH/zilsh/zilsh.zsh
 
-omz_plugins=(node git npm brew fasd pj)
+omz_plugins=(node git npm brew fasd pj rbenv)
 
 _zilsh_init "$BASE_PATH/bundle/"

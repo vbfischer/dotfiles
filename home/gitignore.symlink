@@ -9,6 +9,7 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+*.iml
 
 # Other temp type files
 .svn
@@ -32,4 +33,3 @@ Thumbs.db
 
 # sftp configuration file
 sftp-config.json
-

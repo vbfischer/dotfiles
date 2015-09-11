@@ -1,5 +1,5 @@
 local action = {}
-
+local utils = require 'utils'
 --
 -- Global Variables
 --
@@ -9,7 +9,6 @@ local action = {}
 saved = {}
 saved.win = {}
 saved.winframe = {}
-
 
 --
 -- Function:		returnLast
@@ -23,7 +22,6 @@ function returnLast()
 	end
 end
 
-
 function action.leftThird()
   saved.win = hs.window.focusedWindow()
   saved.winframe = saved.win:frame()
@@ -34,6 +32,27 @@ function action.rightThird()
   saved.win = hs.window.focusedWindow()
   saved.winframe = saved.win:frame()
   hs.grid.set(hs.window.focusedWindow(), {x = 1, y = 0, w = 2, h = 3}, hs.screen.mainScreen())
+end
+
+function action.undoMove()
+		saved.win:setFrame(saved.winframe)
+end
+
+function action.moveToScreen(screen)
+	saved.win = hs.window.focusedWindow()
+	saved.winframe = saved.win:frame()
+
+	saved.win:moveToScreen(screen)
+end
+
+
+function action.moveScreenLeft()
+	saved.win = hs.window.focusedWindow()
+  saved.winframe = saved.win:frame()
+	local screen = saved.win:screen()
+
+	-- saved.win.moveToScreen(saved.win.screen:next())
+	saved.win:moveToScreen(screen:next())
 end
 
 --
@@ -60,7 +79,6 @@ function action.cafftoggle ()
 	end
 end
 
-
 --
 -- Function:		setgrid
 --
@@ -81,17 +99,33 @@ end
 -- 					to the left half of the screen.
 --
 function action.leftHalfMove()
-	saveWidth = hs.grid.GRIDWIDTH
-	saveHeight = hs.grid.GRIDHEIGHT
-	hs.grid.GRIDWIDTH = 4
-	hs.grid.GRIDHEIGHT = 4
-
 	saved.win = hs.window.focusedWindow()
 	saved.winframe = saved.win:frame()
 	hs.grid.set(hs.window.focusedWindow(), { x=0, y=0, w=2, h=4}, hs.screen.mainScreen())
+end
 
-	hs.grid.GRIDWIDTH = saveWidth
-	hs.grid.GRIDHEIGHT = saveHeight
+function action.topRightMove()
+	saved.win = hs.window.focusedWindow()
+	saved.winframe = saved.win:frame()
+	hs.grid.set(hs.window.focusedWindow(), { x=2, y=0, w=2, h=2}, hs.screen.mainScreen())
+end
+
+function action.topLeftMove()
+	saved.win = hs.window.focusedWindow()
+	saved.winframe = saved.win:frame()
+	hs.grid.set(hs.window.focusedWindow(), { x=0, y=0, w=2, h=2}, hs.screen.mainScreen())
+end
+
+function action.bottomRightMove()
+	saved.win = hs.window.focusedWindow()
+	saved.winframe = saved.win:frame()
+	hs.grid.set(hs.window.focusedWindow(), { x=2, y=2, w=2, h=2}, hs.screen.mainScreen())
+end
+
+function action.bottomLeftMove()
+	saved.win = hs.window.focusedWindow()
+	saved.winframe = saved.win:frame()
+	hs.grid.set(hs.window.focusedWindow(), { x=0, y=2, w=2, h=2}, hs.screen.mainScreen())
 end
 
 
@@ -102,18 +136,9 @@ end
 -- 					to the right half of the screen.
 --
 function action.rightHalfMove()
-  hs.alert('rightHalfMove')
-	saveWidth = hs.grid.GRIDWIDTH
-	saveHeight = hs.grid.GRIDHEIGHT
-	hs.grid.GRIDWIDTH = 4
-	hs.grid.GRIDHEIGHT = 4
-
 	saved.win = hs.window.focusedWindow()
-	saved.winframe = saved.win:frame()
+	-- saved.winframe = saved.win:frame()
 	hs.grid.set(hs.window.focusedWindow(), { x=2, y=0, w=2, h=4}, hs.screen.mainScreen())
-
-	hs.grid.GRIDWIDTH = saveWidth
-	hs.grid.GRIDHEIGHT = saveHeight
 end
 
 --
@@ -123,17 +148,9 @@ end
 -- 			to the top half of the screen.
 --
 function action.topHalfMove()
-	saveWidth = hs.grid.GRIDWIDTH
-	saveHeight = hs.grid.GRIDHEIGHT
-	hs.grid.GRIDWIDTH = 4
-	hs.grid.GRIDHEIGHT = 4
-
    saved.win = hs.window.focusedWindow()
    saved.winframe = saved.win:frame()
-	hs.grid.set(hs.window.focusedWindow(), { x=0, y=0, w=4, h=2}, hs.screen.mainScreen())
-
-	hs.grid.GRIDWIDTH = saveWidth
-	hs.grid.GRIDHEIGHT = saveHeight
+	 hs.grid.set(hs.window.focusedWindow(), { x=0, y=0, w=4, h=2}, hs.screen.mainScreen())
 end
 
 --
@@ -143,17 +160,9 @@ end
 -- 			to the bottom half of the screen.
 --
 function action.bottomHalfMove()
-	saveWidth = hs.grid.GRIDWIDTH
-	saveHeight = hs.grid.GRIDHEIGHT
-	hs.grid.GRIDWIDTH = 4
-	hs.grid.GRIDHEIGHT = 4
-
-   saved.win = hs.window.focusedWindow()
-   saved.winframe = saved.win:frame()
+	saved.win = hs.window.focusedWindow()
+	saved.winframe = saved.win:frame()
 	hs.grid.set(hs.window.focusedWindow(), { x=0, y=2, w=4, h=2}, hs.screen.mainScreen())
-
-	hs.grid.GRIDWIDTH = saveWidth
-	hs.grid.GRIDHEIGHT = saveHeight
 end
 
 --
