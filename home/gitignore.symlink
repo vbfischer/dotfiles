@@ -5,6 +5,7 @@ Desktop.ini
 # Thumbnail cache files
 ._*
 Thumbs.db
+.ruby-version
 
 # Files that might appear on external disks
 .Spotlight-V100
@@ -33,3 +34,5 @@ Thumbs.db
 
 # sftp configuration file
 sftp-config.json
+
+

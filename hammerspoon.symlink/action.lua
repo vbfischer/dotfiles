@@ -23,8 +23,9 @@ function returnLast()
 end
 
 function action.leftThird()
-  saved.win = hs.window.focusedWindow()
+  saved.win = hs.window.frontmostWindow()
   saved.winframe = saved.win:frame()
+
   hs.grid.set(saved.win, {x = 0, y = 0, w = 1, h = 3}, hs.screen.mainScreen())
 end
 

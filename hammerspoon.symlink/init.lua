@@ -20,6 +20,10 @@ local hotkeyShortcuts = {
   ['n'] = action.moveScreenLeft
 }
 
+local urlActions = {
+  ['leftthird'] = action.leftThird
+}
+
 --
 -- Set the default grid size and configuration.
 --
@@ -38,6 +42,11 @@ local modalModifiers = mash_modifiers;
 
 for hk, funName in pairs(hotkeyShortcuts) do
   hs.hotkey.bind(mash_modifiers, hk, funName);
+end
+
+
+for url, funName in pairs(urlActions) do
+  hs.urlevent.bind(url, funName);
 end
 
 local appShortcuts = {
