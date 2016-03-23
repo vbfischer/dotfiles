@@ -9,3 +9,5 @@ home/.atom/packages/
 
 .DS_Store
 .DS_Store/
+
+local-init.zsh

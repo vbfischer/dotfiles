@@ -1,9 +1,6 @@
-[submodule "zilsh"]
-	path = zilsh
-	url = git@github.com:zilsh/zilsh.git
 [submodule "bundle/oh-my-zsh-bundle/oh-my-zsh"]
 	path = bundle/oh-my-zsh-bundle/oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
-[submodule "hammerspoon.symlink"]
-	path = hammerspoon.symlink
-	url = git@github.com:vbfischer/oh-my-hammerspoon.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot

@@ -1,0 +1,15 @@
+- defaults:
+  link:
+    relink: true
+    
+- clean: ['~', '~/.config']
+
+- shell:
+  - mkdir -p ~/.config
+
+- link:
+    ~/.dotfiles:        ''
+    ~/bin:              bin/
+    ~/.zsh:             zsh/
+    ~/.zshrc:           zshrc
+    ~/.zprofile:        zprofile
