@@ -20,7 +20,7 @@
         ui = true
 [core]
 	excludesfile = /Users/fischer/.gitignore_global
-        editor = vim
+	editor = subl -n -w
 	autocrlf = input
 [apply]
         whitespace = nowarn

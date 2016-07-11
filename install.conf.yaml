@@ -1,15 +1,21 @@
 - defaults:
-  link:
-    relink: true
-    
+    link:
+      relink: true
+
 - clean: ['~', '~/.config']
 
-- shell:
-  - mkdir -p ~/.config
-
 - link:
-    ~/.dotfiles:        ''
-    ~/bin:              bin/
-    ~/.zsh:             zsh/
-    ~/.zshrc:           zshrc
-    ~/.zprofile:        zprofile
+    ~/.dotfiles:          ''
+    ~/bin:                bin/
+    ~/.zsh:               zsh/
+    ~/.zlogin:            zlogin.zsh
+    ~/.zlogout:           zlogout.zsh
+    ~/.zshrc:             zshrc.zsh
+    ~/.zprezto:           prezto
+    ~/.zpreztorc:         zpreztorc.zsh
+    ~/.zprofile:          zprofile.zsh
+    ~/.zshenv:            zshenv.zsh
+    ~/.ackrc:             ackrc
+    ~/.gitignore_global:  git/gitignore
+    ~/.gitconfig:         git/gitconfig
+    ~/.hammerspoon:       hammerspoon/

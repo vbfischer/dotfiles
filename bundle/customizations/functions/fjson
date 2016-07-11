@@ -1,1 +1,0 @@
-pbpaste | python -m json.tool | pbcopy

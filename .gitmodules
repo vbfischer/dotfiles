@@ -1,6 +1,9 @@
-[submodule "bundle/oh-my-zsh-bundle/oh-my-zsh"]
-	path = bundle/oh-my-zsh-bundle/oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "hammerspoon"]
+	path = hammerspoon
+	url = git@github.com:vbfischer/hammerspoon-files.git
+[submodule "prezto"]
+	path = prezto
+	url = https://github.com/sorin-ionescu/prezto

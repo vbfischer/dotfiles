@@ -14,4 +14,4 @@ if [ ! -z "$2" ]; then
 else
     echo "Invalid Path"
 fi
-echo "$INDEX"
+echo "$INDEX"	
