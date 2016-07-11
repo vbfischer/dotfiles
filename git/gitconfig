@@ -20,7 +20,7 @@
         ui = true
 [core]
 	excludesfile = /Users/fischer/.gitignore_global
-	editor = subl -n -w
+	editor = atom --wait
 	autocrlf = input
 [apply]
         whitespace = nowarn
@@ -39,7 +39,7 @@
         default = simple
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
