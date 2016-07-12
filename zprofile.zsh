@@ -8,7 +8,7 @@
 #
 # Browser
 #
-
+echo "in zprofle"
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='/usr/bin/subl'
-export VISUAL='/usr/bin/subl'
+export EDITOR='/usr/local/bin/atom'
+export VISUAL='/usr/local/bin/atom'
 export PAGER='less'
 
 #

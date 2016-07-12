@@ -2,17 +2,58 @@
 ## dotfiles
 These are my personal dotfiles which I have mostly curated from various sources. They are largely inspired by [the following blog post for the most part](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
-It is managed by [Homesick][https://github.com/technicalpickles/homesick]. It is mainly organized as a "castle" in Homesick, and is installed in the .homesick/repos folder.
+It is managed by [Dotbot][https://github.com/anishathalye/dotbot].
+
+Framework is [Prezto][https://github.com/sorin-ionescu/prezto]
 
 ## Install
-First will need to install homesick:
 
-    gem install homesick
-    homesick clone vbfischer/dotfiles
-    homesick symlink
+Dotbot instructions on what to symlink is in the file install.conf.yaml.
 
-## Todo:
-* want better way than using homesick above. Should be simple to write a script to do the symlinks, etc....
+## The Files
+
+### Startup Files
+#### ~/.secrets
+anything you don't want to commit to github should go in this file.
+
+#### .zshenv
+
+#### .zprofile
+sets up important variables and options used by other startup scripts..
+
+1. initialize Presto
+  * sources the zpreztorc config (see below)
+2. check for a .secrets file.
+3. Traverse the .zsh folder and source the files alphabetically
+
+#### .zshrc
+Bulk of the work is done here.
+
+
+#### .zlogin
+Stuff that happens at the final step..
+
+
+ .zlogout
+
+## Prezto
+Prezto is configured in the zpreztorc file.
+
+Modules loaded are:
+
+* environment
+* terminal
+* editor
+* directory
+* spectrum
+* utility
+* fasd
+* node
+* osx
+* git
+* homebrew
+* completion
+* prompt
 
 ## Resources
 The following are resources I used when making my dotfiles:
@@ -21,4 +62,4 @@ The following are resources I used when making my dotfiles:
 * [Mathias Bynen's dotfiles][https://github.com/mathiasbynens/dotfiles] was equally important.
 * [oh-my-zsh][https://github.com/robbyrussell/oh-my-zsh] provides most functionality.
 
-I tried to leave comments with where they came from, but its likely in my cut/paste/etc it might have gotten removed. If you see something, let me know.
+I try to update this document periodicially, but I might miss something.
