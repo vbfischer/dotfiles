@@ -8,7 +8,6 @@
 #
 # Browser
 #
-echo "in zprofle"
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
