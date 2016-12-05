@@ -19,3 +19,4 @@
     ~/.gitignore_global:  git/gitignore
     ~/.gitconfig:         git/gitconfig
     ~/.hammerspoon:       hammerspoon/
+    ~/.hyper.js:          hyper.js
