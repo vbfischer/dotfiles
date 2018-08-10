@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 13,
 
     // font family with optional fallbacks
     fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
@@ -67,7 +67,7 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: true
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -98,7 +98,7 @@ module.exports = {
       hideDock: false,
       hideOnBlur: false,
       hotkeys: ['Option+Space'],
-      position: 'top',
+      position: 'left',
       primaryDisplay: false,
       resizable: true,
       startAlone: false,

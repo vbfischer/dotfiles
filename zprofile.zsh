@@ -49,6 +49,7 @@ path=(
   ~/.rbenv/shims
   /usr/local/{bin,sbin}
   ~/bin
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   $path
 )
 

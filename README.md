@@ -53,6 +53,7 @@ Modules loaded are:
 * git
 * homebrew
 * completion
+* syntax-highlighting
 * prompt
 
 ## Resources
@@ -62,4 +63,4 @@ The following are resources I used when making my dotfiles:
 * [Mathias Bynen's dotfiles][https://github.com/mathiasbynens/dotfiles] was equally important.
 * [oh-my-zsh][https://github.com/robbyrussell/oh-my-zsh] provides most functionality.
 
-I try to update this document periodicially, but I might miss something.
+I try to update this document periodically, but I might miss something.

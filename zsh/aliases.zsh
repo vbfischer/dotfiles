@@ -29,3 +29,5 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 alias results_build="mvn -Dmaven.test.skip=true install"
 alias rbuild="mvn -Dmaven.test.skip=true install"
+
+alias rm=trash
