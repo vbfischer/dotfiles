@@ -11,12 +11,12 @@
 # Alternate/bottom-pinned layout
 # Set `alt-layout` to `true` (see `style:` section below)
 
-command: 'now-playing.widget/lib/get_track_metadata.sh'
+command: '/Users/fischer/.nvm/versions/node/v10.11.0/bin/now-playing info'
 
 refreshFrequency: 5000
 
 render: (output) -> '''
-<div id="now-playing">
+<div id="now-playing" >
   <div id="display">
     <div id="art"></div>
     <div id="coverart"></div>
@@ -32,6 +32,7 @@ render: (output) -> '''
 afterRender: ->
 
 update: (output) ->
+  console.log output
   if !output
     $('#now-playing').hide()
   else
@@ -39,8 +40,8 @@ update: (output) ->
     track = JSON.parse(output)
     if $('#track').text() != track.name
       $('#track').text track.name
-      $('#artist').text track.artists[0].name
-      $('#album').text track.album.name
+      $('#artist').text track.artist
+      $('#album').text track.album
       $.getScript 'now-playing.widget/lib/jquery.textfill.min.js', ->
         $('#now-playing').textfill
           minFontPixels: 8
@@ -49,7 +50,7 @@ update: (output) ->
           innerTag: '#track'
       if(track.album)
         $('#art').css
-          'background-image': 'url(' + track.album.images[0].url + ')'
+          'background-image': 'url(' + track.albumImage + ')'
           'background-size': 'cover'
           'background-repeat': 'no-repeat'
    return

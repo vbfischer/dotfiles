@@ -16,8 +16,8 @@ fi
 # Editors
 #
 
-export EDITOR='/usr/local/bin/atom'
-export VISUAL='/usr/local/bin/atom'
+export EDITOR='/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'
+export VISUAL='/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'
 export PAGER='less'
 
 #
