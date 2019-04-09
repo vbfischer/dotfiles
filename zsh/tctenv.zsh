@@ -31,21 +31,6 @@ export TTC_UPDATE_INTERVAL=20
 # Turn off terminal title
 export TTC_TERMINAL_TITLE=false
 
-# Twitter api keys
-export TTC_CONSUMER_KEY='Gh0Aw3MsjZAKrhtm9I7AMiM37'
-export TTC_CONSUMER_SECRET='09mqLNVs1Bxsb40P4KVmGv2KEUbyhfWBlmsaQdf8aHMSZCZmsz'
-export TTC_ACCESS_TOKEN='5808002-SUu2UTfv4ViPOaTjPYZqCu0YE4QZ5YolSuD7yJHuDR'
-export TTC_ACCESS_TOKEN_SECRET='gGBg2ZGlx9RJDMTNZbBPFUVHWIU3JIkWzlo3m9BcQUYTu'
-
-# Note: in tiny-terminal-care < 1.0.7, the recommended variables for the Twitter
-# API keys were the ones before. As of 1.0.8, they are deprecated
-# (because the names are too generic), but will still be supported
-# until the next major version.
-# export CONSUMER_KEY='...'
-# export CONSUMER_SECRET='...'
-# export ACCESS_TOKEN='...'
-# export ACCESS_TOKEN_SECRET='...'
-
 # Default pomodoro is 20 minutes and default break is 5 minutes.
 # You can change these defaults like this.
 export TTC_POMODORO=25
