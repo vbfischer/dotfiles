@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# source shflags library from the current directory
+. ./shflags
+
+# define flags
+DEFINE_boolean 'debug' false 'enable debug mode' 'd'
+
+debug() {
+  [ ${FLAGS_debug} -eq ${FLAGS_TRUE} ] && echo "DEBUG: $@" >&2
+}
+
+main() {
+  debug 'debug mode enabled'
+  echo 'something interesting'
+}
+
+# parse the command-line
+FLAGS "$@" || exit $?
+eval set -- "${FLAGS_ARGV}"
+main "$@"

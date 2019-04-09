@@ -1,0 +1,75 @@
+#!/bin/sh
+
+export CURRENT_DIR=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+
+MASTER_BRANCH=master
+ORIGIN=origin
+
+. "$CURRENT_DIR/gitflow-common"
+
+parse_args() {
+	FLAGS "$@" || exit $?
+	eval set -- "${FLAGS_ARGV}"
+
+  VERSION=$1;
+  
+  BRANCH=$PREFIX/$VERSION
+}
+
+require_version_arg() {
+  if [ "$VERSION" = "" ]; then
+    warn "Missing argument <version>"
+    usage
+    exit 1
+  fi
+}
+
+usage() {
+  echo "usage: git sr <subcommand>"
+  echo
+  echo "       git sr start <version>"
+  echo "       git sr list"
+  echo "       git sr rc <version>"
+  echo "       git sr finish <version>"
+  echo "       git sr track <version>"
+  echo "       git sr delete <version>"
+  echo "       git sr publish <version>"
+  echo "       git sr rebase <version>"
+  echo "       git sr rename <version>"
+}
+
+init() {
+  require_git_repo
+  PREFIX=sr
+  COMMAND=$1; shift
+
+  # Ensure command is valid
+  if [ ! -e "$CURRENT_DIR/git-sr-$COMMAND" ]; then
+    usage
+    exit 1
+  fi
+}
+
+main() {
+  if [ $# -lt 1 ]; then
+    usage
+    exit 1
+  fi
+
+  # use the shFlags project to parse the command line arguments
+	. "$CURRENT_DIR/gitflow-shFlags"
+
+  # allow user to request git action logging
+  DEFINE_boolean show_commands false 'show actions taken (git commands)' g
+
+  init "$@"
+
+  . "$CURRENT_DIR/git-sr-$COMMAND"
+  shift
+  cmd_$COMMAND "$@"
+}
+
+# read arguments into global variables
+PREFIX=sr
+
+main "$@"

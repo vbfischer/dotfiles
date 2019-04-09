@@ -1,0 +1,29 @@
+#!/bin/sh
+
+cmd_publish() {
+  parse_args "$@"
+	require_version_arg
+
+	# sanity checks
+	require_clean_working_tree
+	require_branch "$BRANCH"
+	git_do fetch -q "$ORIGIN"
+	require_branch_absent "$ORIGIN/$BRANCH"
+
+	# create remote branch
+	git_do push "$ORIGIN" "$BRANCH:refs/heads/$BRANCH"
+	git_do fetch -q "$ORIGIN"
+
+	# configure remote tracking
+	git config "branch.$BRANCH.remote" "$ORIGIN"
+	git config "branch.$BRANCH.merge" "refs/heads/$BRANCH"
+	git_do checkout "$BRANCH"
+
+	echo
+	echo "Summary of actions:"
+	echo "- A new remote branch '$BRANCH' was created"
+	echo "- The local branch '$BRANCH' was configured to track the remote branch"
+	echo "- You are now on branch '$BRANCH'"
+	echo
+}
+

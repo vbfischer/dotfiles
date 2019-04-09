@@ -40,13 +40,13 @@ fi
 typeset -gU cdpath fpath mailpath path
 
 # Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
+cdpath=(
+  $cdpath
+)
 
-# Set the list of directories that Zsh searches for programs.
+# # Set the list of directories that Zsh searches for programs.
 path=(
-  ~/.rbenv/shims
+#   ~/.rbenv/shims
   /usr/local/{bin,sbin}
   ~/bin
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

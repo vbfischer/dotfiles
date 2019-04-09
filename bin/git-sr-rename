@@ -1,0 +1,23 @@
+#!/bin/sh
+parse_args() {
+	FLAGS "$@" || exit $?
+	eval set -- "${FLAGS_ARGV}"
+
+  NEW_BRANCH=$1
+  OLD_BRANCH="${2-$(git symbolic-ref --short -q HEAD)}"
+}
+
+cmd_rename() {
+  parse_args "$@"
+  
+  # Assert there is at least one branch provided
+  test -z $1 && echo "new branch name required." 1>&2 && exit 1
+
+  git_do branch -m "$OLD_BRANCH" "$NEW_BRANCH"
+  # check if the branch is tracking a remote branch
+  if [[ -n "$ORIGIN" && "$ORIGIN" != "." ]]
+  then
+      git_do push "$ORIGIN" :"$OLD_BRANCH"
+      git_do push --set-upstream "$ORIGIN" "$NEW_BRANCH"
+  fi
+}

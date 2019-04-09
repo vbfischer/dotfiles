@@ -36,3 +36,4 @@ Thumbs.db
 sftp-config.json
 
 .vscode/
+.node-version

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+cmd_delete() {
+  parse_args "$@"
+  # Ensure Version Arg Exists
+  echo $BRANCH
+  require_version_arg
+  
+  # Ensure branch exists.
+  require_branch "$BRANCH"
+
+  # Ensure tree is clean
+  require_clean_working_tree
+
+  git_do checkout "$MASTER_BRANCH" || \
+		  die "Could not check out $MASTER_BRANCH."
+
+  git_do branch -d "$BRANCH"
+
+  echo
+  echo "Summary of actions: "
+  echo " SR Branch '$BRANCH' has been deleted"
+  echo 
+}

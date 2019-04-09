@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cmd_rebase() {
+  echo "Do we really want to do this??"
+}

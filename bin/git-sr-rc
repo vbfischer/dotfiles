@@ -1,0 +1,28 @@
+#!/bin/sh
+
+cmd_rc() {
+  DEFINE_boolean list false "Just list all tags for version" l
+
+  parse_args "$@"
+
+  # matches=($(for i in "$git_all_tags"))
+  matches=$(echo "$(git_all_tags)" | grep "^$(escape "$VERSION")")
+
+  if flag list; then
+    for item in $matches; do
+      echo $item
+    done 
+
+  else
+    local i
+    for item in $matches; do
+      i=$item
+    done
+
+    echo $i
+  fi
+
+
+
+  # echo $matches
+}
